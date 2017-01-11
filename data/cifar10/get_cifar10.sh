@@ -2,7 +2,8 @@
 # This scripts downloads the CIFAR10 (binary version) data and unzips it.
 
 DIR="$( cd "$(dirname "$0")" ; pwd -P )"
-cd "$DIR"
+echo $DIR
+cd $DIR
 
 echo "Downloading..."
 

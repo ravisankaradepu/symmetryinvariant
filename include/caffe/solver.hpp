@@ -97,6 +97,7 @@ class Solver {
  protected:
   // Make and apply the update value for the current iteration.
   virtual void ApplyUpdate() = 0;
+  virtual void ForwardNormalize();
   string SnapshotFilename(const string extension);
   string SnapshotToBinaryProto();
   string SnapshotToHDF5();

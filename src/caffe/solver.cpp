@@ -218,6 +218,8 @@ void Solver<Dtype>::Step(int iters) {
     net_->set_debug_info(display && param_.debug_info());
     // accumulate the loss and gradient
     Dtype loss = 0;
+    // Calling the normalize of weights before doing a forward prop
+    ForwardNormalize();
     for (int i = 0; i < param_.iter_size(); ++i) {
       loss += net_->ForwardBackward();
     }
@@ -490,6 +492,10 @@ void Solver<Dtype>::UpdateSmoothedLoss(Dtype loss, int start_iter,
     smoothed_loss_ += (loss - losses_[idx]) / average_loss;
     losses_[idx] = loss;
   }
+}
+
+template <typename Dtype>
+void Solver<Dtype>::ForwardNormalize() {
 }
 
 INSTANTIATE_CLASS(Solver);

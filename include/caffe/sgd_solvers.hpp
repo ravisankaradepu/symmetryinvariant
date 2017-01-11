@@ -26,7 +26,9 @@ class SGDSolver : public Solver<Dtype> {
  protected:
   void PreSolve();
   Dtype GetLearningRate();
-  virtual void ApplyUpdate();
+  void ApplyUpdate();
+  void ForwardN(int param_id);
+  void ForwardNormalize();
   virtual void Normalize(int param_id);
   virtual void Regularize(int param_id);
   virtual void ComputeUpdateValue(int param_id, Dtype rate);
