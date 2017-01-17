@@ -29,6 +29,7 @@ class SGDSolver : public Solver<Dtype> {
   void ApplyUpdate();
   void ForwardN(int param_id);
   void ForwardNormalize();
+  void Projection(int param_id);
   virtual void Normalize(int param_id);
   virtual void Regularize(int param_id);
   virtual void ComputeUpdateValue(int param_id, Dtype rate);
